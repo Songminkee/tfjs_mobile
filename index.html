@@ -9,6 +9,7 @@
     <video playsinline autoplay></video>
     <button>Take snapshot</button>
     <canvas></canvas>
+    <span></span>
     <script>
       video = document.querySelector('video');
       canvas = document.querySelector('canvas');
@@ -18,6 +19,7 @@ button = document.querySelector('button');
       canvas.style.filter = 'grayscale(1)';
       video.style.transform = 'scaleX(-1)';
       span = document.querySelector('span');
+      span.style.fontSize = '48px';
 
       const LABELS = {
         0: '🤬', // angry
@@ -54,8 +56,7 @@ button = document.querySelector('button');
 
         canvas.getContext('2d').drawImage(video, sx=sx, sy=sy, swidth=s,
           sheight=s, x=0, y=0, width=48, height=48);
-	
-	span.innerHTML = '⌛';
+span.innerHTML = '⌛';
         predict();
     };
 
